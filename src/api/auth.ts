@@ -21,7 +21,7 @@ export const signUp = async ({
 }) => {
   const redirectTo =
     import.meta.env.MODE === "production"
-      ? "https://fsato.github.io/small_stacks/"
+      ? "https://nogson.github.io/small_stacks/"
       : "http://localhost:5173/";
   const { data, error } = await supabase.auth.signUp({
     email,

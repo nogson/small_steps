@@ -14,9 +14,10 @@ type Props = {
 };
 
 const Result: React.FC<Props> = ({ displayData }) => {
-  const grassModel = useGLTF("/model/grass.glb"); // モデルを読み込む
-  const sunflowerModel = useGLTF("/model/sunflower.glb");
-  const treeModel = useGLTF("/model/tree.glb"); // 追加のモデルを読み込む
+  const baseUrl = import.meta.env.BASE_URL; // ベースURLを取得
+  const grassModel = useGLTF(baseUrl + "model/grass.glb"); // モデルを読み込む
+  const sunflowerModel = useGLTF(baseUrl + "model/sunflower.glb");
+  const treeModel = useGLTF(baseUrl + "model/tree.glb"); // 追加のモデルを読み込む
   const models = [sunflowerModel, grassModel, treeModel]; // モデルの配列
 
   return (

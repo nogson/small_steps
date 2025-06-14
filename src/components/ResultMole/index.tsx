@@ -4,7 +4,8 @@ import { Mesh, SkinnedMesh } from "three";
 import * as THREE from "three";
 
 const ResultMole = ({}) => {
-  const { scene, animations } = useGLTF("/model/mole.glb"); // モデルを読み込む
+  const baseUrl = import.meta.env.BASE_URL; // ベースURLを取得
+  const { scene, animations } = useGLTF(baseUrl + "/model/mole.glb"); // モデルを読み込む
   const { actions } = useAnimations(animations, scene);
   const ref = useRef<THREE.Object3D>(null); // 回転を適用するための参照
   const wrapperRef = useRef<THREE.Group>(null);

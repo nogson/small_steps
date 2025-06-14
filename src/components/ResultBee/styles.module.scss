@@ -1,0 +1,29 @@
+.activityType {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 16px;
+  padding: 0 16px 16px;
+  li {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 0 8px;
+    border: 1px solid #ffffff;
+    
+    &.active {
+      border: 1px solid #cbcbcb;
+    }
+  }
+  span {
+    background: #000;
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+}

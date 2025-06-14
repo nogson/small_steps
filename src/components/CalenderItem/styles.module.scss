@@ -1,0 +1,27 @@
+:local(.calender) {
+  :global {
+    .calenderBody {
+      padding: 0 24px;
+    }
+
+    width: 100%;
+
+    .week {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      gap: 2px;
+      li {
+        width: calc((100% - 12px) / 7);
+        color: #8a8a8e;
+        height: 30px;
+        line-height: 30px;
+      }
+    }
+    .days {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px;
+    }
+  }
+}

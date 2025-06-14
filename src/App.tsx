@@ -11,7 +11,7 @@ function App() {
   return (
     <UserProvider>
       <section id="app">
-        <Router>
+        <Router basename="/small_stacks">
           <Routes>
             <Route path="/" element={<SignIn />} />
             <Route path="/signup" element={<SignIn />} />

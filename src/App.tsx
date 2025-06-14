@@ -8,10 +8,13 @@ import { UserProvider } from "./context/UserContext";
 import ExamplePage from "./pages/ExamplePage";
 
 function App() {
+  const basename =
+    import.meta.env.MODE === "production" ? "/small_stacks" : undefined;
+
   return (
     <UserProvider>
       <section id="app">
-        <Router basename="/small_stacks">
+        <Router basename={basename}>
           <Routes>
             <Route path="/" element={<SignIn />} />
             <Route path="/signup" element={<SignIn />} />

@@ -19,9 +19,16 @@ export const signUp = async ({
   email: string;
   password: string;
 }) => {
+  const redirectTo =
+    import.meta.env.MODE === "production"
+      ? "https://fsato.github.io/small_stacks/"
+      : "http://localhost:5173/";
   const { data, error } = await supabase.auth.signUp({
     email,
     password,
+    options: {
+      emailRedirectTo: redirectTo,
+    },
   });
 
   return { data, error };

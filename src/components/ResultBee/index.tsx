@@ -6,7 +6,7 @@ import { useFrame } from "@react-three/fiber";
 
 const ResultBee = ({}) => {
   const baseUrl = import.meta.env.BASE_URL; // ベースURLを取得
-  const { scene, animations } = useGLTF(baseUrl + "/model/bee.glb"); // モデルを読み込む
+  const { scene, animations } = useGLTF(baseUrl + "model/bee.glb"); // モデルを読み込む
   const { actions } = useAnimations(animations, scene);
   const ref = useRef<THREE.Object3D>(null); // 回転を適用するための参照
   const wrapperRef = useRef<THREE.Group>(null);

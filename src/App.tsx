@@ -9,7 +9,7 @@ import ExamplePage from "./pages/ExamplePage";
 
 function App() {
   const basename =
-    import.meta.env.MODE === "production" ? "/small_stacks" : undefined;
+    import.meta.env.MODE === "production" ? "/small_steps" : undefined;
 
   return (
     <UserProvider>

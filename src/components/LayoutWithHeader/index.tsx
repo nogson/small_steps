@@ -45,7 +45,7 @@ const LayoutWithHeader = () => {
             </div>
           </div>
         </CustomDialog>
-        <h1 className="logo">Small Stacks</h1>
+        <h1 className="logo">Small Steps</h1>
         <nav className="headerNav">
           <ul>
             <li onClick={() => modalRef.current?.open()}>

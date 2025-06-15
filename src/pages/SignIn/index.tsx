@@ -61,7 +61,7 @@ const SignIn = () => {
 
   return (
     <div className={styles.signIn}>
-      <h1 className="logo">Small Stacks</h1>
+      <h1 className="logo">Small Steps</h1>
       <Suspense fallback={null}>
         <div className="signInForm">
           <h2>{isSignIn ? "Sign in" : "Sign up"}</h2>

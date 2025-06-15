@@ -35,15 +35,17 @@ const SignIn = () => {
 
     if (isSignIn) {
       res = await signIn({ email, password });
-      navigate("/calender");
     } else {
       res = await signUp({ email, password });
     }
     setIsLoading(false);
     if (res.error) {
+      console.error("Error:", res.error);
       setError(res.error);
       errorDialogRef.current?.open();
-    } else if (!isSignIn) {
+    } else if (isSignIn) {
+      navigate("/calender");
+    } else {
       setError(null);
       singUpDialogRef.current?.open();
     }

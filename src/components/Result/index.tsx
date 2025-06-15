@@ -99,6 +99,12 @@ const formatData = (data: DailyActivity[]) => {
       }
     }
   });
+  Object.keys(formattedData).forEach((key) => {
+    formattedData[key].sort(
+      (a, b) =>
+        new Date(a.created_at).getTime() - new Date(b.created_at).getTime()
+    );
+  });
   return formattedData;
 };
 
@@ -139,7 +145,7 @@ const ResultItems = ({ displayData, models }: any) => {
 
   const getModel = (data: any) => {
     let model = models[0];
-
+    console.log("data", data);
     if (data[0] && data[0].activity_type === ACTIVITY_TYPES[0].type) {
       model = models[0];
     } else if (data[0] && data[0].activity_type === ACTIVITY_TYPES[1].type) {

@@ -1,4 +1,4 @@
-import sytles from "./styles.module.scss";
+import styles from "./styles.module.scss";
 import { CellEventContext } from "../../pages/Calender";
 import { useContext } from "react";
 import { DailyActivity } from "../../types/DatabaseTypes";
@@ -27,16 +27,38 @@ const CalenderCell: React.FC<Props> = ({ data, month }) => {
     };
   };
 
+  const isToday = (date: Date) => {
+    const today = new Date();
+    const todayStr = [
+      today.getFullYear(),
+      today.getMonth(),
+      today.getDate(),
+    ].join("-");
+    const dateStr = [date.getFullYear(), date.getMonth(), date.getDate()].join(
+      "-"
+    );
+
+    console.log("Today:", todayStr, dateStr);
+
+    return todayStr === dateStr;
+  };
+
+  isToday(data.date);
+
   return (
     <>
       <div
-        className={`${sytles.calenderCell} ${sytles[setClassName(data.date, month)]}`}
+        className={`${styles.calenderCell} ${styles[setClassName(data.date, month)]}`}
         onClick={() => cellEvent(data.date)}
       >
-        <span className={sytles.date}> {data.date.getDate()}</span>
+        <span className={styles.date}>
+          <span className={isToday(data.date) ? styles.isToday : ""}>
+            {data.date.getDate()}
+          </span>
+        </span>
         {data.data.map((d) => (
           <span
-            className={sytles.stacked}
+            className={styles.stacked}
             key={d.id}
             style={getStyle(d.activity_type!)} // 関数を呼び出して戻り値を渡す
           ></span>
